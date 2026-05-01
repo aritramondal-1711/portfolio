@@ -1203,6 +1203,28 @@
           View on GitHub →
         </a>
       </div>
+      <div class="project-card">
+        <div class="project-number">03</div>
+        <div class="project-stack">
+          <span class="stack-tag">Microsoft Azure</span>
+          <span class="stack-tag">VNet</span>
+          <span class="stack-tag">Azure Firewall</span>
+          <span class="stack-tag">NSG</span>
+          <span class="stack-tag">VNet Peering</span>
+          <span class="stack-tag">UDR</span>
+          <span class="stack-tag">Azure Bastion</span>
+          <span class="stack-tag">Load Balancer</span>
+          <span class="stack-tag">Private DNS</span>
+          <span class="stack-tag">Cloud Security</span>
+          <span class="stack-tag">Zero Trust</span>
+          <span class="stack-tag">Networking</span>
+        </div>
+        <h3>Enterprise Hub-and-Spoke Azure Network Project</h3>
+        <p>Architected a production-grade, secure Azure network using a hub-and-spoke model with centralized Azure Firewall for controlled egress and zero public IP exposure. Implemented VNet peering, UDR-based routing (0.0.0.0/0 → Firewall), and layered security with NSGs to enforce strict traffic isolation between application and database tiers. Enabled secure administrative access via Azure Bastion and deployed internal load balancing for private application services. Integrated Private DNS for cross-network resolution, delivering a Zero Trust–aligned, highly secure and scalable cloud networking solution.</p>
+        <a href="https://github.com/aritramondal-1711/Azure-Network-Project" target="_blank" rel="noopener" class="project-link">
+          View on GitHub →
+        </a>
+      </div>
     </div>
   </section>
 
@@ -1352,6 +1374,10 @@
     <p class="ats-project-header">Automated Health Monitor Setup (Ansible)</p>
     <p>One-command Ansible automation to deploy and configure the complete Health Monitoring stack. Handles Django service setup, systemd scheduling, NGINX configuration, permissions, and daemon reloads — fully idempotent. GitHub: github.com/aritramondal-1711/HelthMonitor_SetUp</p>
 
+    <p class="ats-project-header">Enterprise Hub-and-Spoke Azure Network Project</p>
+    <p>Architected a secure Azure hub-and-spoke network with centralized firewall-based egress control and no public IP exposure. Implemented VNet peering, UDR routing, and NSGs for strict tier isolation, enabled Bastion-only access, and deployed internal load balancing with Private DNS-delivering a scalable, Zero Trust-aligned cloud architecture. GitHub: github.com/aritramondal-1711/Azure-Network-Project</p>
+
+    
     <h2>Certifications</h2>
     <div class="ats-cert">
       <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> — Microsoft, 2023<br>
@@ -1578,6 +1604,11 @@
            'Ansible | systemd | NGINX | Linux',
            'One-command Ansible automation to deploy and configure the complete Health Monitoring stack. Handles Django service setup, systemd scheduling, NGINX config, permissions, daemon reloads — fully idempotent.',
            'github.com/aritramondal-1711/HelthMonitor_SetUp'],
+          ['Enterprise Hub-and-Spoke Azure Network Project',
+           'Microsoft Azure | VNet | Azure Firewall | NSG | VNet Peering | UDR | Azure Bastion | Load Balancer',
+           'Architected a secure Azure hub-and-spoke network with centralized firewall-based egress control and no public IP exposure. Implemented VNet peering, UDR routing, and NSGs for strict tier isolation, enabled Bastion-only access, and deployed internal load balancing with Private DNS-delivering a scalable, Zero Trust-aligned cloud architecture.',
+           'github.com/aritramondal-1711/Azure-Network-Project'
+          ]
         ];
         projects.forEach(([title, stack, desc, link]) => {
           checkPage(18);
