@@ -1162,6 +1162,15 @@
         <div class="achieve-title">FS Utilisation Alerting</div>
         <p>Monitors application filesystem utilisation in real time. Fires email alerts automatically when disk usage crosses defined thresholds — before outages happen.</p>
       </div>
+      <div class="achieve-card">
+        <div class="achieve-title">Automated Agentless Opsview Monitoring for Solaris Servers</div>
+        <p>Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script, improving scalability and reducing operational overhead. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors to enable seamless communication with target Solaris systems. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies. This automation streamlined monitoring setup, eliminated manual intervention, and enhanced visibility across the infrastructure.</p>
+      </div>
+      <div class="achieve-card">
+        <div class="achieve-title">Proactive Squid Service Monitoring & Alerting Using Bash</div>
+        <p>Resolved recurring business outages caused by unmonitored Squid proxy service failures by developing a proactive monitoring solution. Built a lightweight Bash script to continuously check the status of Squid services across all proxy servers. Integrated automated email alerts to notify admins instantly if any squid service is found not running. Scheduled the script using cron to execute every 10 minutes, ensuring near real-time detection and faster incident response. This solution significantly reduced downtime, improved service reliability, and strengthened overall monitoring capabilities.</p>
+      </div>
+      
     </div>
   </section>
 
@@ -1366,6 +1375,12 @@
     <p class="ats-project-header">Filesystem Utilisation Alerting</p>
     <p>Real-time monitoring script for application filesystem utilisation with automated email alerts on threshold breaches — enabling proactive intervention before storage-related outages.</p>
 
+    <p class="ats-project-header">Automated Agentless Opsview Monitoring for Solaris Servers</p>
+    <p>Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script, improving scalability and reducing operational overhead. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors to enable seamless communication with target Solaris systems. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies. This automation streamlined monitoring setup, eliminated manual intervention, and enhanced visibility across the infrastructure.</p>
+
+    <p class="ats-project-header">Proactive Squid Service Monitoring & Alerting Using Bash</p>
+    <p>Resolved recurring business outages caused by unmonitored Squid proxy service failures by developing a proactive monitoring solution. Built a lightweight Bash script to continuously check the status of Squid services across all proxy servers. Integrated automated email alerts to notify admins instantly if any squid service is found not running. Scheduled the script using cron to execute every 10 minutes, ensuring near real-time detection and faster incident response. This solution significantly reduced downtime, improved service reliability, and strengthened overall monitoring capabilities.</p>
+    
     <h2>Personal Projects</h2>
     <p class="ats-project-header">Azure Server Health Monitoring System</p>
     <p>Agentless server health monitoring for Azure Virtual Machines using Ansible. Collects CPU, memory, and disk metrics from multiple VMs without agent installation. Dashboard built with Django and served via NGINX reverse proxy. GitHub: github.com/aritramondal-1711/HealthCheck</p>
@@ -1579,6 +1594,10 @@
            'Script enabling patch deployment to multiple remote servers from a single central host — providing consistent, auditable mass-patching without manual SSH to each node.'],
           ['Filesystem Utilisation Alerting',
            'Real-time filesystem monitoring with automated email alerts on threshold breaches — enabling proactive intervention before storage-related outages occur.'],
+          ['Automated Agentless Opsview Monitoring for Solaris Servers',
+          'Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script, improving scalability and reducing operational overhead. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors to enable seamless communication with target Solaris systems. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies. This automation streamlined monitoring setup, eliminated manual intervention, and enhanced visibility across the infrastructure.'],
+          ['Proactive Squid Service Monitoring & Alerting Using Bash',
+          'Resolved recurring business outages caused by unmonitored Squid proxy service failures by developing a proactive monitoring solution. Built a lightweight Bash script to continuously check the status of Squid services across all proxy servers. Integrated automated email alerts to notify admins instantly if any squid service is found not running. Scheduled the script using cron to execute every 10 minutes, ensuring near real-time detection and faster incident response. This solution significantly reduced downtime, improved service reliability, and strengthened overall monitoring capabilities.']
         ];
         autos.forEach(([title, desc]) => {
           checkPage(12);
