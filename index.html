@@ -11,18 +11,15 @@
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://aritramondal-1711.github.io/portfolio/" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="Aritra Mondal | Linux Administrator & Cloud Automation Engineer" />
   <meta property="og:description" content="Enterprise Linux Administrator specialising in RHEL, Ansible automation, and Azure cloud infrastructure." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://aritramondal-1711.github.io/portfolio/" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Aritra Mondal | Linux Administrator" />
   <meta name="twitter:description" content="3+ years enterprise Linux admin. RHEL, Ansible, Azure, Bash." />
 
-  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -70,9 +67,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     html { scroll-behavior: smooth; }
-
     body {
       background: var(--bg);
       color: var(--text);
@@ -81,7 +76,6 @@
       cursor: crosshair;
     }
 
-    /* GRID OVERLAY */
     body::before {
       content: '';
       position: fixed;
@@ -94,28 +88,21 @@
       z-index: 0;
     }
 
-    /* SCANLINE */
     body::after {
       content: '';
       position: fixed;
       inset: 0;
       background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,0,0,0.08) 2px,
-        rgba(0,0,0,0.08) 4px
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.08) 2px, rgba(0,0,0,0.08) 4px
       );
       pointer-events: none;
       z-index: 0;
     }
 
-    /* NAV */
     nav {
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
       align-items: center;
@@ -134,15 +121,9 @@
       text-decoration: none;
       display: none;
     }
-
     .nav-logo span { color: var(--accent2); }
 
-    nav ul {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
+    nav ul { display: flex; gap: 2.5rem; list-style: none; }
     nav a {
       font-family: var(--mono);
       font-size: 0.75rem;
@@ -152,10 +133,9 @@
       text-transform: uppercase;
       transition: color 0.2s;
     }
-
     nav a:hover { color: var(--accent); }
 
-    /* HERO */
+    /* ── HERO ── */
     #hero {
       min-height: 100vh;
       display: flex;
@@ -165,9 +145,102 @@
       z-index: 1;
     }
 
-    .hero-inner {
-      max-width: 900px;
+    .hero-layout {
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+      max-width: 1100px;
+      width: 100%;
     }
+
+    /* Photo column */
+    .hero-photo-wrap {
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    /* Decorative animated ring */
+    .hero-photo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: conic-gradient(
+        var(--accent) 0deg,
+        transparent 90deg,
+        var(--accent2) 180deg,
+        transparent 270deg,
+        var(--accent) 360deg
+      );
+      animation: spin-ring 6s linear infinite;
+      z-index: 0;
+    }
+
+    /* Static corner accent squares */
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: -14px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    @keyframes spin-ring {
+      to { transform: rotate(360deg); }
+    }
+
+    .hero-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      position: relative;
+      z-index: 1;
+      border: 3px solid var(--bg);
+      /* subtle desaturate to match dark aesthetic */
+      filter: contrast(1.05) brightness(0.95);
+    }
+
+    /* Status dot */
+    .hero-status {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.65rem;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--accent3);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .hero-status::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent3);
+      animation: pulse 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+
+    /* Text column */
+    .hero-inner { max-width: 760px; }
 
     .hero-label {
       font-family: var(--mono);
@@ -181,7 +254,6 @@
       align-items: center;
       gap: 0.75rem;
     }
-
     .hero-label::before {
       content: '';
       display: block;
@@ -198,7 +270,6 @@
       letter-spacing: -0.03em;
       margin-bottom: 1.5rem;
     }
-
     h1 .line1 { color: var(--text); display: block; }
     h1 .line2 {
       color: transparent;
@@ -232,7 +303,6 @@
       text-transform: uppercase;
       transition: all 0.2s;
     }
-
     .tag:hover { border-color: var(--accent); color: var(--accent); }
 
     .hero-cta {
@@ -251,19 +321,9 @@
       transition: all 0.2s;
       display: inline-block;
     }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #000;
-    }
-
+    .btn-primary { background: var(--accent); color: #000; }
     .btn-primary:hover { background: #00a8cc; }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
+    .btn-outline { border: 1px solid var(--border); color: var(--text); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
 
     /* TICKER */
@@ -277,7 +337,6 @@
       position: relative;
       z-index: 1;
     }
-
     .ticker-inner {
       display: flex;
       gap: 4rem;
@@ -289,9 +348,7 @@
       letter-spacing: 0.15em;
       text-transform: uppercase;
     }
-
     .ticker-inner span { color: var(--accent); }
-
     @keyframes ticker {
       from { transform: translateX(0); }
       to { transform: translateX(-50%); }
@@ -303,21 +360,18 @@
       z-index: 1;
       padding: 7rem 4rem;
     }
-
     .section-header {
       display: flex;
       align-items: center;
       gap: 1.5rem;
       margin-bottom: 4rem;
     }
-
     .section-num {
       font-family: var(--mono);
       font-size: 0.7rem;
       color: var(--accent);
       letter-spacing: 0.2em;
     }
-
     h2 {
       font-family: var(--sans);
       font-size: clamp(2rem, 4vw, 3rem);
@@ -327,7 +381,6 @@
 
     /* SKILLS */
     #skills { background: var(--surface); }
-
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -335,21 +388,13 @@
       background: var(--border);
       border: 1px solid var(--border);
     }
-
     .skill-card {
       background: var(--surface);
       padding: 2rem;
       transition: background 0.2s;
     }
-
     .skill-card:hover { background: var(--surface2); }
-
-    .skill-card-icon {
-      font-family: var(--mono);
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
+    .skill-card-icon { font-family: var(--mono); font-size: 1.5rem; margin-bottom: 1rem; }
     .skill-card h3 {
       font-size: 0.8rem;
       font-weight: 700;
@@ -359,7 +404,6 @@
       margin-bottom: 0.75rem;
       font-family: var(--mono);
     }
-
     .skill-card p {
       font-family: var(--mono);
       font-size: 0.75rem;
@@ -369,7 +413,6 @@
 
     /* EXPERIENCE */
     #experience { background: var(--bg); }
-
     .exp-card {
       border: 1px solid var(--border);
       padding: 2.5rem;
@@ -379,11 +422,7 @@
       gap: 3rem;
       transition: border-color 0.2s;
     }
-
     .exp-card:hover { border-color: var(--accent); }
-
-    .exp-meta { }
-
     .exp-company {
       font-family: var(--mono);
       font-size: 0.7rem;
@@ -392,27 +431,9 @@
       text-transform: uppercase;
       margin-bottom: 0.4rem;
     }
-
-    .exp-period {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    .exp-role {
-      font-size: 1.3rem;
-      font-weight: 700;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .exp-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
+    .exp-period { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
+    .exp-role { font-size: 1.3rem; font-weight: 700; margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+    .exp-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
     .exp-list li {
       font-family: var(--mono);
       font-size: 0.78rem;
@@ -421,23 +442,15 @@
       padding-left: 1.2rem;
       position: relative;
     }
-
-    .exp-list li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
+    .exp-list li::before { content: '▸'; position: absolute; left: 0; color: var(--accent); }
 
     /* ACHIEVEMENTS */
     #achievements { background: var(--surface); }
-
     .achieve-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 1.5rem;
     }
-
     .achieve-card {
       border: 1px solid var(--border);
       padding: 2rem;
@@ -445,21 +458,15 @@
       overflow: hidden;
       transition: border-color 0.2s;
     }
-
     .achieve-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 2px;
       background: linear-gradient(90deg, var(--accent), transparent);
     }
-
     .achieve-card:hover { border-color: var(--accent3); }
-
     .achieve-card:hover::before { background: linear-gradient(90deg, var(--accent3), transparent); }
-
     .achieve-title {
       font-family: var(--mono);
       font-size: 0.72rem;
@@ -468,23 +475,11 @@
       text-transform: uppercase;
       margin-bottom: 0.75rem;
     }
-
-    .achieve-card p {
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      color: var(--muted);
-      line-height: 1.7;
-    }
+    .achieve-card p { font-family: var(--mono); font-size: 0.76rem; color: var(--muted); line-height: 1.7; }
 
     /* PROJECTS */
     #projects { background: var(--bg); }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-
+    .projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
     .project-card {
       border: 1px solid var(--border);
       padding: 2.5rem;
@@ -492,40 +487,27 @@
       transition: all 0.2s;
       overflow: hidden;
     }
-
     .project-card::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
+      bottom: 0; left: 0; right: 0;
       height: 1px;
       background: var(--accent);
       transform: scaleX(0);
       transition: transform 0.3s;
     }
-
     .project-card:hover::after { transform: scaleX(1); }
     .project-card:hover { border-color: var(--accent); }
-
     .project-number {
       font-family: var(--mono);
       font-size: 3rem;
       font-weight: 700;
       color: var(--border);
       position: absolute;
-      top: 1.5rem;
-      right: 2rem;
+      top: 1.5rem; right: 2rem;
       line-height: 1;
     }
-
-    .project-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1.25rem;
-    }
-
+    .project-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.25rem; }
     .stack-tag {
       font-family: var(--mono);
       font-size: 0.65rem;
@@ -534,22 +516,8 @@
       padding: 0.2rem 0.6rem;
       letter-spacing: 0.08em;
     }
-
-    .project-card h3 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
-    }
-
-    .project-card p {
-      font-family: var(--mono);
-      font-size: 0.76rem;
-      color: var(--muted);
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
+    .project-card h3 { font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .project-card p { font-family: var(--mono); font-size: 0.76rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
     .project-link {
       font-family: var(--mono);
       font-size: 0.7rem;
@@ -561,12 +529,10 @@
       align-items: center;
       gap: 0.5rem;
     }
-
     .project-link:hover { color: var(--text); }
 
     /* CERTIFICATIONS */
     #certifications { background: var(--surface); }
-
     .cert-card {
       border: 1px solid var(--border);
       padding: 2rem 2.5rem;
@@ -576,35 +542,16 @@
       max-width: 600px;
       transition: border-color 0.2s;
     }
-
     .cert-card:hover { border-color: var(--accent2); }
-
     .cert-badge {
-      width: 60px;
-      height: 60px;
+      width: 60px; height: 60px;
       background: linear-gradient(135deg, #0078d4, #005a9e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #fff;
-      flex-shrink: 0;
-      letter-spacing: 0.05em;
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--mono); font-size: 0.7rem; font-weight: 700;
+      color: #fff; flex-shrink: 0; letter-spacing: 0.05em;
     }
-
-    .cert-info h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-
-    .cert-info p {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
+    .cert-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .cert-info p { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
 
     /* STATS */
     .stats-bar {
@@ -616,103 +563,27 @@
       position: relative;
       z-index: 1;
     }
-
-    .stat {
-      text-align: center;
-    }
-
-    .stat-num {
-      font-family: var(--sans);
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: #000;
-      line-height: 1;
-      display: block;
-    }
-
-    .stat-label {
-      font-family: var(--mono);
-      font-size: 0.65rem;
-      color: rgba(0,0,0,0.6);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      display: block;
-      margin-top: 0.4rem;
-    }
+    .stat { text-align: center; }
+    .stat-num { font-family: var(--sans); font-size: 2.5rem; font-weight: 800; color: #000; line-height: 1; display: block; }
+    .stat-label { font-family: var(--mono); font-size: 0.65rem; color: rgba(0,0,0,0.6); letter-spacing: 0.15em; text-transform: uppercase; display: block; margin-top: 0.4rem; }
 
     /* CONTACT */
     #contact { background: var(--bg); }
-
-    .contact-inner {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: start;
-    }
-
-    .contact-left h2 {
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-left p {
-      font-family: var(--mono);
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .contact-left h2 { margin-bottom: 1.5rem; }
+    .contact-left p { font-family: var(--mono); font-size: 0.82rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.5rem; }
+    .contact-links { display: flex; flex-direction: column; gap: 1rem; }
     .contact-link {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--text);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 1rem 1.5rem;
-      border: 1px solid var(--border);
-      transition: all 0.2s;
+      font-family: var(--mono); font-size: 0.78rem; color: var(--text);
+      text-decoration: none; display: flex; align-items: center; gap: 1rem;
+      padding: 1rem 1.5rem; border: 1px solid var(--border); transition: all 0.2s;
     }
-
     .contact-link:hover { border-color: var(--accent); color: var(--accent); }
-
-    .contact-link-icon {
-      font-size: 1rem;
-      width: 20px;
-      text-align: center;
-    }
-
-    .education-card {
-      border: 1px solid var(--border);
-      padding: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .edu-degree {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.4rem;
-    }
-
-    .edu-school {
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      color: var(--accent);
-      margin-bottom: 0.2rem;
-    }
-
-    .edu-year {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
+    .contact-link-icon { font-size: 1rem; width: 20px; text-align: center; }
+    .education-card { border: 1px solid var(--border); padding: 2rem; margin-bottom: 1rem; }
+    .edu-degree { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .edu-school { font-family: var(--mono); font-size: 0.75rem; color: var(--accent); margin-bottom: 0.2rem; }
+    .edu-year { font-family: var(--mono); font-size: 0.72rem; color: var(--muted); }
 
     /* FOOTER */
     footer {
@@ -725,134 +596,65 @@
       position: relative;
       z-index: 1;
     }
-
-    footer p {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-    }
+    footer p { font-family: var(--mono); font-size: 0.7rem; color: var(--muted); }
+    footer a { color: var(--accent); text-decoration: none; }
 
     .btn-download {
-      background: var(--accent3);
-      color: #000;
-      cursor: pointer;
-      border: none;
-      font-family: var(--mono);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.85rem 2rem;
-      transition: all 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+      background: var(--accent3); color: #000; cursor: pointer; border: none;
+      font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 0.85rem 2rem; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
     }
     .btn-download:hover { background: #2fcc10; }
     .btn-download:disabled { opacity: 0.6; cursor: wait; }
 
-    /* ATS RESUME — hidden from screen, printed to PDF */
+    /* ATS RESUME hidden */
     #ats-resume {
       display: none;
-      width: 794px; /* A4 at 96dpi */
-      background: #ffffff;
-      color: #111111;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 11px;
-      line-height: 1.5;
-      padding: 36px 48px;
+      width: 794px; background: #ffffff; color: #111111;
+      font-family: Arial, Helvetica, sans-serif; font-size: 11px;
+      line-height: 1.5; padding: 36px 48px;
     }
-    #ats-resume h1 {
-      font-size: 22px;
-      font-weight: 700;
-      color: #111;
-      margin: 0 0 2px 0;
-      letter-spacing: 0;
-      -webkit-text-stroke: 0;
-    }
-    #ats-resume .ats-title {
-      font-size: 12px;
-      color: #333;
-      margin: 0 0 6px 0;
-      font-weight: 600;
-    }
-    #ats-resume .ats-contact {
-      font-size: 10px;
-      color: #444;
-      margin-bottom: 14px;
-      border-bottom: 1.5px solid #111;
-      padding-bottom: 8px;
-    }
+    #ats-resume h1 { font-size: 22px; font-weight: 700; color: #111; margin: 0 0 2px 0; letter-spacing: 0; -webkit-text-stroke: 0; }
+    #ats-resume .ats-title { font-size: 12px; color: #333; margin: 0 0 6px 0; font-weight: 600; }
+    #ats-resume .ats-contact { font-size: 10px; color: #444; margin-bottom: 14px; border-bottom: 1.5px solid #111; padding-bottom: 8px; }
     #ats-resume .ats-contact a { color: #1a0dab; text-decoration: none; }
-    #ats-resume h2 {
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #111;
-      border-bottom: 1px solid #bbb;
-      padding-bottom: 3px;
-      margin: 14px 0 7px 0;
-      -webkit-text-stroke: 0;
-    }
-    #ats-resume p, #ats-resume li {
-      font-size: 10.5px;
-      color: #222;
-      margin: 0 0 3px 0;
-    }
-    #ats-resume ul {
-      margin: 4px 0 4px 18px;
-      padding: 0;
-    }
-    #ats-resume .ats-skills-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2px 24px;
-    }
+    #ats-resume h2 { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #111; border-bottom: 1px solid #bbb; padding-bottom: 3px; margin: 14px 0 7px 0; -webkit-text-stroke: 0; }
+    #ats-resume p, #ats-resume li { font-size: 10.5px; color: #222; margin: 0 0 3px 0; }
+    #ats-resume ul { margin: 4px 0 4px 18px; padding: 0; }
+    #ats-resume .ats-skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 24px; }
     #ats-resume .ats-skills-grid li { font-size: 10.5px; }
-    #ats-resume .ats-job-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 4px;
-    }
+    #ats-resume .ats-job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
     #ats-resume .ats-company { font-weight: 700; font-size: 11px; }
     #ats-resume .ats-period { font-size: 10px; color: #555; }
     #ats-resume .ats-role { font-size: 10.5px; font-style: italic; color: #333; margin-bottom: 4px; }
     #ats-resume .ats-project-header { font-weight: 700; font-size: 10.5px; margin-bottom: 2px; }
     #ats-resume .ats-cert { margin-bottom: 4px; }
-    #ats-resume .ats-edu-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 2px;
-    }
+    #ats-resume .ats-edu-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; }
     #ats-resume .ats-degree { font-weight: 700; font-size: 10.5px; }
     #ats-resume .ats-school { font-size: 10px; color: #444; }
     #ats-resume .ats-year { font-size: 10px; color: #555; }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
-    .hero-inner > * {
-      animation: fadeUp 0.6s ease forwards;
-      opacity: 0;
-    }
-
+    .hero-inner > * { animation: fadeUp 0.6s ease forwards; opacity: 0; }
     .hero-label { animation-delay: 0.1s; }
     h1 { animation-delay: 0.2s; }
     .hero-desc { animation-delay: 0.35s; }
     .hero-tags { animation-delay: 0.5s; }
     .hero-cta { animation-delay: 0.65s; }
 
-    /* CURSOR DOT */
+    .hero-photo-wrap {
+      animation: fadeUp 0.6s ease 0.05s forwards;
+      opacity: 0;
+    }
+
+    /* CURSOR */
     .cursor {
-      width: 8px;
-      height: 8px;
+      width: 8px; height: 8px;
       background: var(--accent);
       border-radius: 50%;
       position: fixed;
@@ -864,31 +666,22 @@
 
     /* HAMBURGER */
     .nav-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 4px;
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
     }
-    .nav-toggle span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      background: var(--text);
-      transition: all 0.3s;
-    }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); transition: all 0.3s; }
     .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .nav-toggle.open span:nth-child(2) { opacity: 0; }
     .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-    /* ── TABLET (≤ 900px) ── */
+    /* TABLET */
     @media (max-width: 900px) {
       nav { padding: 1rem 2rem; }
       nav ul { gap: 1.5rem; }
       section { padding: 5rem 2rem; }
       #hero { padding: 0 2rem; }
+      .hero-layout { flex-direction: column; gap: 2.5rem; align-items: flex-start; padding-top: 6rem; }
+      .hero-photo { width: 160px; height: 160px; }
       .exp-card { grid-template-columns: 1fr; gap: 1rem; }
       .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
       .projects-grid { grid-template-columns: 1fr; }
@@ -898,40 +691,25 @@
       .achieve-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
-    /* ── MOBILE (≤ 600px) ── */
+    /* MOBILE */
     @media (max-width: 600px) {
-      /* Nav → hamburger */
       .nav-toggle { display: flex; }
-      nav {
-        display: none;
-      }
+      nav { display: none; }
       nav ul {
-        display: none;
-        position: fixed;
-        top: 57px;
-        left: 0; right: 0;
-        background: rgba(8,12,16,0.9);
-        backdrop-filter: blur(16px);
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
-        padding: 1rem 0 2rem;
-        border-bottom: 1px solid var(--border);
-        z-index: 99;
+        display: none; position: fixed; top: 57px; left: 0; right: 0;
+        background: rgba(8,12,16,0.9); backdrop-filter: blur(16px);
+        flex-direction: column; align-items: center; gap: 0;
+        padding: 1rem 0 2rem; border-bottom: 1px solid var(--border); z-index: 99;
       }
       nav ul.open { display: flex; }
       nav ul li { width: 100%; text-align: center; }
-      nav a {
-        display: block;
-        padding: 1rem 0;
-        font-size: 0.85rem;
-        border-bottom: 1px solid var(--border);
-      }
+      nav a { display: block; padding: 1rem 0; font-size: 0.85rem; border-bottom: 1px solid var(--border); }
 
-      /* Hero */
-      #hero { padding: 0 1.25rem; min-height: 100svh; align-items: flex-end; padding-bottom: 4rem; }
+      #hero { padding: 0 1.25rem; min-height: 100svh; padding-top: 5rem; padding-bottom: 3rem; align-items: flex-start; }
+      .hero-layout { flex-direction: column; gap: 2rem; padding-top: 1rem; }
+      .hero-photo { width: 130px; height: 130px; }
       .hero-inner { width: 100%; }
-      .hero-label { font-size: 0.65rem; margin-bottom: 1rem; margin-top: 1rem }
+      .hero-label { font-size: 0.65rem; margin-bottom: 1rem; }
       h1 { font-size: clamp(3rem, 14vw, 4.5rem); margin-bottom: 1.25rem; }
       .hero-desc { font-size: 0.78rem; margin-bottom: 2rem; }
       .hero-tags { gap: 0.4rem; margin-bottom: 2rem; }
@@ -939,53 +717,33 @@
       .hero-cta { flex-direction: column; gap: 0.75rem; }
       .btn { width: 100%; text-align: center; padding: 0.9rem 1.5rem; }
 
-      /* Sections */
       section { padding: 4rem 1.25rem; }
       .section-header { flex-direction: column; align-items: flex-start; gap: 0.4rem; margin-bottom: 2.5rem; }
       h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
-
-      /* Skills */
       .skills-grid { grid-template-columns: 1fr; }
       .skill-card { padding: 1.5rem; }
-
-      /* Stats */
       .stats-bar { grid-template-columns: 1fr 1fr; padding: 1.5rem 1.25rem; gap: 1rem; }
       .stat-num { font-size: 1.8rem; }
       .stat-label { font-size: 0.6rem; }
-
-      /* Experience */
       .exp-card { padding: 1.5rem; gap: 0.75rem; }
       .exp-role { font-size: 1.1rem; }
       .exp-list li { font-size: 0.73rem; }
-
-      /* Achievements */
       .achieve-grid { grid-template-columns: 1fr; }
       .achieve-card { padding: 1.5rem; }
-
-      /* Projects */
       .projects-grid { grid-template-columns: 1fr; }
       .project-card { padding: 1.75rem; }
       .project-number { font-size: 2rem; top: 1rem; right: 1.25rem; }
       .project-card h3 { font-size: 1rem; padding-right: 2.5rem; }
-
-      /* Certifications */
       .cert-card { flex-direction: column; align-items: flex-start; gap: 1.25rem; padding: 1.5rem; }
-
-      /* Contact */
       .contact-inner { gap: 2rem; }
       .contact-link { font-size: 0.72rem; padding: 0.85rem 1rem; }
       .education-card { padding: 1.25rem; }
-
-      /* Footer */
       footer { padding: 1.25rem; gap: 0.75rem; }
       footer p { font-size: 0.65rem; }
-
-      /* Hide custom cursor on touch */
       .cursor { display: none; }
       body { cursor: auto; }
     }
 
-    /* ── SMALL MOBILE (≤ 380px) ── */
     @media (max-width: 380px) {
       h1 { font-size: 2.8rem; }
       .stats-bar { grid-template-columns: 1fr; }
@@ -996,7 +754,6 @@
 
   <div class="cursor" id="cursor"></div>
 
-  <!-- NAV -->
   <nav>
     <a href="#hero" class="nav-logo">AM<span>_</span></a>
     <ul>
@@ -1009,33 +766,49 @@
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-inner">
-      <div class="hero-label">Linux Administrator & Cloud Engineer</div>
-      <h1>
-        <span class="line1">Aritra</span>
-        <span class="line2">Mondal</span>
-      </h1>
-      <p class="hero-desc">
-        3+ years managing enterprise RHEL environments at Capgemini. 
-        Automating ops with Bash & Ansible. Building cloud infrastructure on Azure. 
-        MCA from Jadavpur University. Azure Certified (AZ-900).
-      </p>
-      <div class="hero-tags">
-        <span class="tag">RHEL 7/8</span>
-        <span class="tag">Bash Scripting</span>
-        <span class="tag">Ansible</span>
-        <span class="tag">Azure</span>
-        <span class="tag">Red Hat Satellite</span>
-        <span class="tag">YUM / DNF</span>
-        <span class="tag">Python</span>
-        <span class="tag">Django</span>
+    <div class="hero-layout">
+
+      <!-- PHOTO -->
+      <div class="hero-photo-wrap">
+        <img
+          src="https://aritramondal-1711.github.io/portfolio/my_img.jpg"
+          alt="Aritra Mondal — Linux Administrator"
+          class="hero-photo"
+          loading="eager"
+        />
+        <div class="hero-status">Available</div>
       </div>
-      <div class="hero-cta">
-        <a href="mailto:aritra850@outlook.com" class="btn btn-primary">Get In Touch</a>
-        <button class="btn btn-download" id="download-resume-btn" onclick="downloadResume()" aria-label="Download Resume as PDF">↓ Download Resume</button>
-        <a href="https://github.com/aritramondal-1711" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-        <a href="https://www.linkedin.com/in/mondalaritra" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+
+      <!-- TEXT -->
+      <div class="hero-inner">
+        <div class="hero-label">Linux Administrator & Cloud Engineer</div>
+        <h1>
+          <span class="line1">Aritra</span>
+          <span class="line2">Mondal</span>
+        </h1>
+        <p class="hero-desc">
+          3+ years managing enterprise RHEL environments at Capgemini.
+          Automating ops with Bash & Ansible. Building cloud infrastructure on Azure.
+          MCA from Jadavpur University. Azure Certified (AZ-900).
+        </p>
+        <div class="hero-tags">
+          <span class="tag">RHEL 7/8</span>
+          <span class="tag">Bash Scripting</span>
+          <span class="tag">Ansible</span>
+          <span class="tag">Azure</span>
+          <span class="tag">Red Hat Satellite</span>
+          <span class="tag">YUM / DNF</span>
+          <span class="tag">Python</span>
+          <span class="tag">Django</span>
+        </div>
+        <div class="hero-cta">
+          <a href="mailto:aritra850@outlook.com" class="btn btn-primary">Get In Touch</a>
+          <button class="btn btn-download" id="download-resume-btn" onclick="downloadResume()" aria-label="Download Resume as PDF">↓ Download Resume</button>
+          <a href="https://github.com/aritramondal-1711" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+          <a href="https://www.linkedin.com/in/mondalaritra" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+        </div>
       </div>
+
     </div>
   </section>
 
@@ -1049,22 +822,10 @@
 
   <!-- STATS -->
   <div class="stats-bar">
-    <div class="stat">
-      <span class="stat-num">3+</span>
-      <span class="stat-label">Years Experience</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">RHEL</span>
-      <span class="stat-label">Primary OS</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">Azure</span>
-      <span class="stat-label">Azure Certified</span>
-    </div>
-    <div class="stat">
-      <span class="stat-num">MCA</span>
-      <span class="stat-label">Jadavpur University</span>
-    </div>
+    <div class="stat"><span class="stat-num">3+</span><span class="stat-label">Years Experience</span></div>
+    <div class="stat"><span class="stat-num">RHEL</span><span class="stat-label">Primary OS</span></div>
+    <div class="stat"><span class="stat-num">Azure</span><span class="stat-label">Azure Certified</span></div>
+    <div class="stat"><span class="stat-num">MCA</span><span class="stat-label">Jadavpur University</span></div>
   </div>
 
   <!-- SKILLS -->
@@ -1164,13 +925,12 @@
       </div>
       <div class="achieve-card">
         <div class="achieve-title">Automated Agentless Opsview Monitoring for Solaris Servers</div>
-        <p>Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script, improving scalability and reducing operational overhead. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors to enable seamless communication with target Solaris systems. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies. This automation streamlined monitoring setup, eliminated manual intervention, and enhanced visibility across the infrastructure.</p>
+        <p>Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script, improving scalability and reducing operational overhead. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors to enable seamless communication with target Solaris systems.</p>
       </div>
       <div class="achieve-card">
         <div class="achieve-title">Proactive Squid Service Monitoring & Alerting Using Bash</div>
-        <p>Resolved recurring business outages caused by unmonitored Squid proxy service failures by developing a proactive monitoring solution. Built a lightweight Bash script to continuously check the status of Squid services across all proxy servers. Integrated automated email alerts to notify admins instantly if any squid service is found not running. Scheduled the script using cron to execute every 10 minutes, ensuring near real-time detection and faster incident response. This solution significantly reduced downtime, improved service reliability, and strengthened overall monitoring capabilities.</p>
+        <p>Resolved recurring business outages caused by unmonitored Squid proxy service failures. Built a lightweight Bash script to continuously check Squid services across all proxy servers with cron-based execution every 10 minutes and automated email alerting.</p>
       </div>
-      
     </div>
   </section>
 
@@ -1184,77 +944,44 @@
       <div class="project-card">
         <div class="project-number">01</div>
         <div class="project-stack">
-          <span class="stack-tag">Ansible</span>
-          <span class="stack-tag">Django</span>
-          <span class="stack-tag">NGINX</span>
-          <span class="stack-tag">Azure</span>
-          <span class="stack-tag">Linux</span>
+          <span class="stack-tag">Ansible</span><span class="stack-tag">Django</span>
+          <span class="stack-tag">NGINX</span><span class="stack-tag">Azure</span><span class="stack-tag">Linux</span>
         </div>
         <h3>Azure Server Health Monitoring System</h3>
         <p>Agentless server health monitoring for Azure VMs using Ansible. Collects CPU, memory, and disk metrics from multiple servers without any agent installation. Dashboard built in Django, served via NGINX reverse proxy.</p>
-        <a href="https://github.com/aritramondal-1711/HealthCheck" target="_blank" rel="noopener" class="project-link">
-          View on GitHub →
-        </a>
+        <a href="https://github.com/aritramondal-1711/HealthCheck" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
       </div>
       <div class="project-card">
         <div class="project-number">02</div>
         <div class="project-stack">
-          <span class="stack-tag">Ansible</span>
-          <span class="stack-tag">Linux</span>
-          <span class="stack-tag">systemd</span>
-          <span class="stack-tag">NGINX</span>
-          <span class="stack-tag">Automation</span>
+          <span class="stack-tag">Ansible</span><span class="stack-tag">Linux</span>
+          <span class="stack-tag">systemd</span><span class="stack-tag">NGINX</span><span class="stack-tag">Automation</span>
         </div>
         <h3>Automated Health Monitor Setup</h3>
         <p>One-command Ansible automation to deploy and configure the complete Health Monitoring stack. Handles Django service setup, systemd scheduling, NGINX config, permissions, daemon reloads — fully idempotent.</p>
-        <a href="https://github.com/aritramondal-1711/HelthMonitor_SetUp" target="_blank" rel="noopener" class="project-link">
-          View on GitHub →
-        </a>
+        <a href="https://github.com/aritramondal-1711/HelthMonitor_SetUp" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
       </div>
       <div class="project-card">
         <div class="project-number">03</div>
         <div class="project-stack">
-          <span class="stack-tag">Microsoft Azure</span>
-          <span class="stack-tag">VNet</span>
-          <span class="stack-tag">Azure Firewall</span>
-          <span class="stack-tag">NSG</span>
-          <span class="stack-tag">VNet Peering</span>
-          <span class="stack-tag">UDR</span>
-          <span class="stack-tag">Azure Bastion</span>
-          <span class="stack-tag">Load Balancer</span>
-          <span class="stack-tag">Private DNS</span>
-          <span class="stack-tag">Cloud Security</span>
-          <span class="stack-tag">Zero Trust</span>
-          <span class="stack-tag">Networking</span>
+          <span class="stack-tag">Microsoft Azure</span><span class="stack-tag">VNet</span>
+          <span class="stack-tag">Azure Firewall</span><span class="stack-tag">NSG</span>
+          <span class="stack-tag">Azure Bastion</span><span class="stack-tag">Zero Trust</span>
         </div>
         <h3>Enterprise Hub-and-Spoke Azure Network Project</h3>
-        <p>Architected a production-grade, secure Azure network using a hub-and-spoke model with centralized Azure Firewall for controlled egress and zero public IP exposure. Implemented VNet peering, UDR-based routing (0.0.0.0/0 → Firewall), and layered security with NSGs to enforce strict traffic isolation between application and database tiers. Enabled secure administrative access via Azure Bastion and deployed internal load balancing for private application services. Integrated Private DNS for cross-network resolution, delivering a Zero Trust–aligned, highly secure and scalable cloud networking solution.</p>
-        <a href="https://github.com/aritramondal-1711/Azure-Network-Project" target="_blank" rel="noopener" class="project-link">
-          View on GitHub →
-        </a>
+        <p>Architected a production-grade, secure Azure network using a hub-and-spoke model with centralized Azure Firewall, VNet peering, UDR-based routing, layered NSGs, Azure Bastion, internal load balancing, and Private DNS — Zero Trust–aligned.</p>
+        <a href="https://github.com/aritramondal-1711/Azure-Network-Project" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
       </div>
-
       <div class="project-card">
         <div class="project-number">04</div>
         <div class="project-stack">
-          <span class="stack-tag">Ansible</span>
-          <span class="stack-tag">Linux</span>
-          <span class="stack-tag">YAML</span>
-          <span class="stack-tag">SSH</span>
-          <span class="stack-tag">Shell Scripting</span>
-          <span class="stack-tag">Automation</span>
-          <span class="stack-tag">Patch Management</span>
-          <span class="stack-tag">Infrastructure Automation</span>
-          <span class="stack-tag">System Administration</span>
-          <span class="stack-tag">Configuration Management</span>
+          <span class="stack-tag">Ansible</span><span class="stack-tag">Linux</span>
+          <span class="stack-tag">Patch Management</span><span class="stack-tag">Automation</span>
         </div>
-            <h3>Automated OS Patching Framework using Ansible</h3>
-        <p>
-          Engineered an enterprise-grade OS patching automation framework using Ansible to streamline patch management across Linux and Solaris environments. Designed a modular three-stage workflow consisting of automated pre-check validation, controlled patch deployment, and post-patch verification to ensure system reliability and compliance. Implemented reusable Ansible roles, centralized logging, and automated report generation for scalable infrastructure operations. The solution significantly reduced manual intervention, minimized downtime, improved patch consistency, and enhanced operational efficiency in large-scale server environments.
-        </p>
+        <h3>Automated OS Patching Framework using Ansible</h3>
+        <p>Enterprise-grade OS patching automation with a modular three-stage workflow: pre-check validation, controlled patch deployment, and post-patch verification. Covers Linux and Solaris with centralized logging and automated report generation.</p>
         <a href="https://github.com/aritramondal-1711/Ansible_Playbook_Precheck_Patch_Postcheck" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
-    </div>
-          
+      </div>
     </div>
   </section>
 
@@ -1283,22 +1010,10 @@
         </div>
         <p>Available for roles in Linux administration, cloud infrastructure, DevOps, and automation engineering. Based in Kolkata, India.</p>
         <div class="contact-links">
-          <a href="mailto:aritra850@outlook.com" class="contact-link">
-            <span class="contact-link-icon">✉</span>
-            aritra850@outlook.com
-          </a>
-          <a href="tel:+918509911711" class="contact-link">
-            <span class="contact-link-icon">📞</span>
-            +91 8509911711
-          </a>
-          <a href="https://www.linkedin.com/in/mondalaritra" target="_blank" rel="noopener" class="contact-link">
-            <span class="contact-link-icon">in</span>
-            linkedin.com/in/mondalaritra
-          </a>
-          <a href="https://github.com/aritramondal-1711" target="_blank" rel="noopener" class="contact-link">
-            <span class="contact-link-icon">⌥</span>
-            github.com/aritramondal-1711
-          </a>
+          <a href="mailto:aritra850@outlook.com" class="contact-link"><span class="contact-link-icon">✉</span>aritra850@outlook.com</a>
+          <a href="tel:+918509911711" class="contact-link"><span class="contact-link-icon">📞</span>+91 8509911711</a>
+          <a href="https://www.linkedin.com/in/mondalaritra" target="_blank" rel="noopener" class="contact-link"><span class="contact-link-icon">in</span>linkedin.com/in/mondalaritra</a>
+          <a href="https://github.com/aritramondal-1711" target="_blank" rel="noopener" class="contact-link"><span class="contact-link-icon">⌥</span>github.com/aritramondal-1711</a>
         </div>
       </div>
       <div class="contact-right">
@@ -1317,39 +1032,23 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <p>© 2026 Aritra Mondal · Linux Administrator · Kolkata, India</p>
     <p>Built for <a href="https://www.linkedin.com/in/mondalaritra">Aritra Mondal</a></p>
   </footer>
 
-  <!-- ══════════════════════════════════════════════
-       ATS-OPTIMISED PDF RESUME (hidden from screen)
-       100% text-based, no images, no dark colors
-       Keyword-rich for ATS parsing & SEO indexing
-  ══════════════════════════════════════════════ -->
+  <!-- ATS RESUME (hidden) -->
   <div id="ats-resume" aria-hidden="true">
-
     <h1>Aritra Mondal</h1>
     <div class="ats-title">Linux Administrator &amp; Cloud Engineer</div>
     <div class="ats-contact">
-      Kolkata, India &nbsp;|&nbsp;
-      aritra850@outlook.com &nbsp;|&nbsp;
-      +91 8509911711 &nbsp;|&nbsp;
+      Kolkata, India &nbsp;|&nbsp; aritra850@outlook.com &nbsp;|&nbsp; +91 8509911711 &nbsp;|&nbsp;
       <a href="https://www.linkedin.com/in/mondalaritra">linkedin.com/in/mondalaritra</a> &nbsp;|&nbsp;
-      <a href="https://github.com/aritramondal-1711">github.com/aritramondal-1711</a> &nbsp; |&nbsp;
-      <a href="https://aritramondal-1711.github.io/portfolio/">https://aritramondal-1711.github.io/portfolio/ </a>
+      <a href="https://github.com/aritramondal-1711">github.com/aritramondal-1711</a> &nbsp;|&nbsp;
+      <a href="https://aritramondal-1711.github.io/portfolio/">https://aritramondal-1711.github.io/portfolio/</a>
     </div>
-
     <h2>Professional Summary</h2>
-    <p>
-      Results-driven Red Hat Enterprise Linux (RHEL) Administrator with 3+ years of enterprise experience at Capgemini.
-      Expertise in RHEL 7/8 server administration, Bash/Shell scripting, Ansible automation, Red Hat Satellite Server,
-      patch management, and Microsoft Azure cloud infrastructure. Proven track record of automating operational workflows,
-      reducing manual effort, and maintaining SLA compliance in high-availability production environments.
-      Microsoft Azure Fundamentals certified (AZ-900). MCA graduate from Jadavpur University.
-    </p>
-
+    <p>Results-driven Red Hat Enterprise Linux (RHEL) Administrator with 3+ years of enterprise experience at Capgemini. Expertise in RHEL 7/8 server administration, Bash/Shell scripting, Ansible automation, Red Hat Satellite Server, patch management, and Microsoft Azure cloud infrastructure. Proven track record of automating operational workflows, reducing manual effort, and maintaining SLA compliance in high-availability production environments. Microsoft Azure Fundamentals certified (AZ-900). MCA graduate from Jadavpur University.</p>
     <h2>Technical Skills</h2>
     <ul class="ats-skills-grid">
       <li><strong>Operating Systems:</strong> RHEL 7/8, CentOS, Solaris</li>
@@ -1363,7 +1062,6 @@
       <li><strong>Version Control:</strong> Git, GitHub</li>
       <li><strong>Utilities:</strong> vi/vim, grep, awk, sed, LEAPP</li>
     </ul>
-
     <h2>Professional Experience</h2>
     <div class="ats-job-header">
       <span class="ats-company">Capgemini</span>
@@ -1380,61 +1078,42 @@
       <li>Resolved incidents, performed root cause analysis (RCA), and implemented preventive measures in coordination with cross-functional teams.</li>
       <li>Created and maintained technical documentation including troubleshooting guides, Standard Operating Procedures (SOPs), and incident resolution workflows.</li>
     </ul>
-
+    
     <h2>Key Automation Projects</h2>
     <p class="ats-project-header">Post-Install Hardening Automation</p>
     <p>Automated post-installation system hardening, required package installation, and Red Hat Satellite Server registration — eliminating manual setup steps entirely and ensuring compliance from first boot.</p>
-
     <p class="ats-project-header">Patch Compliance Reporter</p>
     <p>Bash script that scans all registered servers, checks patch compliance status, and delivers a formatted compliance report to the ops team via email — replacing a fully manual audit process.</p>
-
     <p class="ats-project-header">Health Check Script — Linux &amp; Solaris</p>
     <p>Automated health scan across Linux and Solaris servers. Collects CPU, memory, disk, and service metrics and emails a consolidated health report to stakeholders on a scheduled basis.</p>
-
     <p class="ats-project-header">Centralised Patching Framework</p>
     <p>Script enabling patch deployment to multiple remote servers from a single central host — providing consistent, auditable mass-patching without requiring manual SSH access to each node.</p>
-
     <p class="ats-project-header">Filesystem Utilisation Alerting</p>
-    <p>Real-time monitoring script for application filesystem utilisation with automated email alerts on threshold breaches — enabling proactive intervention before storage-related outages.</p>
-
+    <p>Real-time filesystem monitoring with automated email alerts on threshold breaches — enabling proactive intervention before storage-related outages occur.</p>
     <p class="ats-project-header">Automated Agentless Opsview Monitoring for Solaris Servers</p>
-    <p>Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script, improving scalability and reducing operational overhead. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors to enable seamless communication with target Solaris systems. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies. This automation streamlined monitoring setup, eliminated manual intervention, and enhanced visibility across the infrastructure.</p>
-
-    <p class="ats-project-header">Proactive Squid Service Monitoring & Alerting Using Bash</p>
-    <p>Resolved recurring business outages caused by unmonitored Squid proxy service failures by developing a proactive monitoring solution. Built a lightweight Bash script to continuously check the status of Squid services across all proxy servers. Integrated automated email alerts to notify admins instantly if any squid service is found not running. Scheduled the script using cron to execute every 10 minutes, ensuring near real-time detection and faster incident response. This solution significantly reduced downtime, improved service reliability, and strengthened overall monitoring capabilities.</p>
+    <p>Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies.</p>
+    <p class="ats-project-header">Proactive Squid Service Monitoring &amp; Alerting Using Bash</p>
+    <p>Built a lightweight Bash script to continuously check the status of Squid services across all proxy servers with automated email alerts and cron-based execution every 10 minutes, significantly reducing downtime and improving service reliability.</p>
     
     <h2>Personal Projects</h2>
     <p class="ats-project-header">Azure Server Health Monitoring System</p>
-    <p>Agentless server health monitoring for Azure Virtual Machines using Ansible. Collects CPU, memory, and disk metrics from multiple VMs without agent installation. Dashboard built with Django and served via NGINX reverse proxy. GitHub: github.com/aritramondal-1711/HealthCheck</p>
-
+    <p>Agentless server health monitoring for Azure Virtual Machines using Ansible. Dashboard built with Django and served via NGINX reverse proxy. GitHub: github.com/aritramondal-1711/HealthCheck</p>
     <p class="ats-project-header">Automated Health Monitor Setup (Ansible)</p>
-    <p>One-command Ansible automation to deploy and configure the complete Health Monitoring stack. Handles Django service setup, systemd scheduling, NGINX configuration, permissions, and daemon reloads — fully idempotent. GitHub: github.com/aritramondal-1711/HelthMonitor_SetUp</p>
-
+    <p>One-command Ansible automation to deploy and configure the complete Health Monitoring stack. Fully idempotent. GitHub: github.com/aritramondal-1711/HelthMonitor_SetUp</p>
     <p class="ats-project-header">Enterprise Hub-and-Spoke Azure Network Project</p>
-    <p>Architected a secure Azure hub-and-spoke network with centralized firewall-based egress control and no public IP exposure. Implemented VNet peering, UDR routing, and NSGs for strict tier isolation, enabled Bastion-only access, and deployed internal load balancing with Private DNS-delivering a scalable, Zero Trust-aligned cloud architecture. GitHub: github.com/aritramondal-1711/Azure-Network-Project</p>
-
+    <p>Architected a secure Azure hub-and-spoke network with centralized firewall-based egress control and no public IP exposure. Implemented VNet peering, UDR routing, NSGs, Bastion-only access, internal load balancing, and Private DNS. GitHub: github.com/aritramondal-1711/Azure-Network-Project</p>
     <p class="ats-project-header">Automated OS Patching Framework using Ansible</p>
-    <p>Developed an enterprise-grade OS patching automation framework using Ansible to automate pre-check validation, patch deployment, and post-check verification across Linux and Solaris servers. Implemented modular Ansible roles, agentless SSH-based execution, centralized logging, and automated report generation to improve patch consistency, reduce manual effort, minimize downtime, and enhance infrastructure reliability and compliance. GitHub: github.com/aritramondal-1711/Ansible_Playbook_Precheck_Patch_Postcheck</p>
+    <p>Enterprise-grade OS patching automation framework with modular Ansible roles, agentless SSH-based execution, centralized logging, and automated report generation across Linux and Solaris servers. GitHub: github.com/aritramondal-1711/Ansible_Playbook_Precheck_Patch_Postcheck</p>
     
     <h2>Certifications</h2>
-    <div class="ats-cert">
-      <strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> — Microsoft, 2023<br>
-      Cloud concepts, Azure services, pricing, SLAs, and governance.
-    </div>
-
+    <div class="ats-cert"><strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> — Microsoft, 2023<br>Cloud concepts, Azure services, pricing, SLAs, and governance.</div>
+    
     <h2>Education</h2>
-    <div class="ats-edu-row">
-      <span class="ats-degree">Master of Computer Applications (MCA)</span>
-      <span class="ats-year">2019 – 2022</span>
-    </div>
+    <div class="ats-edu-row"><span class="ats-degree">Master of Computer Applications (MCA)</span><span class="ats-year">2019 – 2022</span></div>
     <div class="ats-school">Jadavpur University, Kolkata, West Bengal, India</div>
     <br>
-    <div class="ats-edu-row">
-      <span class="ats-degree">Bachelor of Science (B.Sc.) in Mathematics</span>
-      <span class="ats-year">2015 – 2019</span>
-    </div>
+    <div class="ats-edu-row"><span class="ats-degree">Bachelor of Science (B.Sc.) in Mathematics</span><span class="ats-year">2015 – 2019</span></div>
     <div class="ats-school">Santipur College, Nadia, West Bengal (University of Kalyani)</div>
-
   </div>
 
   <script>
@@ -1442,296 +1121,144 @@
       const btn = document.getElementById('download-resume-btn');
       btn.disabled = true;
       btn.textContent = '⏳ Generating...';
-
       try {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF({ unit: 'mm', format: 'a4', orientation: 'portrait' });
-
-        const pw = 210; // page width mm
-        const ml = 15; // margin left
-        const mr = 15; // margin right
-        const tw = pw - ml - mr; // text width
-        const mt = 15; // margin top
+        const pw = 210, ml = 15, mr = 15, tw = pw - ml - mr, mt = 15;
         let y = mt;
-        const pb = 282; // page bottom threshold
+        const pb = 282;
 
-        function checkPage(needed = 6) {
-          if (y + needed > pb) { doc.addPage(); y = mt; }
-        }
-
-        function hline(yy, thickness = 0.3) {
-          doc.setDrawColor(0);
-          doc.setLineWidth(thickness);
-          doc.line(ml, yy, pw - mr, yy);
-        }
-
+        function checkPage(needed = 6) { if (y + needed > pb) { doc.addPage(); y = mt; } }
+        function hline(yy, thickness = 0.3) { doc.setDrawColor(0); doc.setLineWidth(thickness); doc.line(ml, yy, pw - mr, yy); }
         function sectionTitle(text) {
-          checkPage(10);
-          y += 4;
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(9);
-          doc.setTextColor(0);
-          doc.text(text.toUpperCase(), ml, y);
-          y += 1.5;
-          hline(y, 0.3);
-          y += 4;
+          checkPage(10); y += 4;
+          doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(0);
+          doc.text(text.toUpperCase(), ml, y); y += 1.5; hline(y, 0.3); y += 4;
         }
-
         function bodyText(text, opts = {}) {
           doc.setFont('helvetica', opts.bold ? 'bold' : opts.italic ? 'italic' : 'normal');
-          doc.setFontSize(opts.size || 9.5);
-          doc.setTextColor(opts.color || 40);
+          doc.setFontSize(opts.size || 9.5); doc.setTextColor(opts.color || 40);
           const lines = doc.splitTextToSize(text, opts.width || tw);
-          lines.forEach(line => {
-            checkPage(5);
-            doc.text(line, opts.x || ml, y);
-            y += opts.leading || 5;
-          });
+          lines.forEach(line => { checkPage(5); doc.text(line, opts.x || ml, y); y += opts.leading || 5; });
         }
-
         function bullet(text) {
-          const bx = ml + 4;
-          const bw = tw - 4;
-          doc.setFont('helvetica', 'normal');
-          doc.setFontSize(9.5);
-          doc.setTextColor(40);
+          const bx = ml + 4, bw = tw - 4;
+          doc.setFont('helvetica','normal'); doc.setFontSize(9.5); doc.setTextColor(40);
           const lines = doc.splitTextToSize(text, bw);
-          lines.forEach((line, i) => {
-            checkPage(5);
-            if (i === 0) doc.text('•', ml + 1, y);
-            doc.text(line, bx, y);
-            y += 4.8;
-          });
+          lines.forEach((line, i) => { checkPage(5); if (i === 0) doc.text('•', ml + 1, y); doc.text(line, bx, y); y += 4.8; });
         }
 
-        // ── NAME & TITLE ──
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(20);
-        doc.setTextColor(0);
-        doc.text('Aritra Mondal', ml, y);
-        y += 7;
+        doc.setFont('helvetica','bold'); doc.setFontSize(20); doc.setTextColor(0); doc.text('Aritra Mondal', ml, y); y += 7;
+        doc.setFont('helvetica','bold'); doc.setFontSize(10.5); doc.setTextColor(60); doc.text('Linux Administrator & Cloud Engineer', ml, y); y += 5;
+        doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(60);
+        doc.text('aritra850@outlook.com  |  +91 8509911711  |  Kolkata, India', ml, y); y += 4.5;
+        doc.text('linkedin.com/in/mondalaritra  |  github.com/aritramondal-1711  |  https://aritramondal-1711.github.io/portfolio/', ml, y); y += 2;
+        hline(y, 0.6); y += 5;
 
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(10.5);
-        doc.setTextColor(60);
-        doc.text('Linux Administrator & Cloud Engineer', ml, y);
-        y += 5;
-
-        // ── CONTACT ──
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(8.5);
-        doc.setTextColor(60);
-        doc.text('aritra850@outlook.com  |  +91 8509911711  |  Kolkata, India', ml, y);
-        y += 4.5;
-        doc.text('linkedin.com/in/mondalaritra  |  github.com/aritramondal-1711 | https://aritramondal-1711.github.io/portfolio/', ml, y);
-        y += 2;
-        hline(y, 0.6);
-        y += 5;
-
-        // ── SUMMARY ──
         sectionTitle('Professional Summary');
-        bodyText(
-          'Results-driven Red Hat Enterprise Linux (RHEL) Administrator with 3+ years of enterprise experience at Capgemini. ' +
-          'Expertise in RHEL 7/8 server administration, Bash/Shell scripting, Ansible automation, Red Hat Satellite Server, ' +
-          'patch management, and Microsoft Azure cloud infrastructure. Proven track record of automating operational workflows, ' +
-          'reducing manual effort, and maintaining SLA compliance in high-availability production environments. ' +
-          'Microsoft Azure Fundamentals certified (AZ-900). MCA graduate from Jadavpur University.',
-          { leading: 5 }
-        );
+        bodyText('Results-driven Red Hat Enterprise Linux (RHEL) Administrator with 3+ years of enterprise experience at Capgemini. Expertise in RHEL 7/8 server administration, Bash/Shell scripting, Ansible automation, Red Hat Satellite Server, patch management, and Microsoft Azure cloud infrastructure. Proven track record of automating operational workflows, reducing manual effort, and maintaining SLA compliance in high-availability production environments. Microsoft Azure Fundamentals certified (AZ-900). MCA graduate from Jadavpur University.', { leading: 5 });
 
-        // ── SKILLS ──
         sectionTitle('Technical Skills');
         const skills = [
-          ['Operating Systems', 'RHEL 7/8, CentOS, Solaris'],
-          ['Scripting', 'Bash, Shell Scripting, Python'],
-          ['Automation', 'Ansible, Ansible Playbooks, Cron Jobs'],
-          ['Patch Management', 'Red Hat Satellite Server 6.x, YUM, DNF'],
-          ['Cloud', 'Microsoft Azure (VM, Networking, RBAC, Storage)'],
-          ['Web/App Stack', 'Django, NGINX, systemd'],
-          ['Monitoring', 'top, sar, vmstat, iostat, netstat, journalctl'],
-          ['Reporting', 'Advanced Excel (Pivot Tables, VLOOKUP, Macros)'],
-          ['Version Control', 'Git, GitHub'],
-          ['Utilities', 'vi/vim, grep, awk, sed, LEAPP'],
+          ['Operating Systems','RHEL 7/8, CentOS, Solaris'],['Scripting','Bash, Shell Scripting, Python'],
+          ['Automation','Ansible, Ansible Playbooks, Cron Jobs'],['Patch Management','Red Hat Satellite Server 6.x, YUM, DNF'],
+          ['Cloud','Microsoft Azure (VM, Networking, RBAC, Storage)'],['Web/App Stack','Django, NGINX, systemd'],
+          ['Monitoring','top, sar, vmstat, iostat, netstat, journalctl'],['Reporting','Advanced Excel (Pivot Tables, VLOOKUP, Macros)'],
+          ['Version Control','Git, GitHub'],['Utilities','vi/vim, grep, awk, sed, LEAPP'],
         ];
         const colW = tw / 2;
         skills.forEach((row, i) => {
           if (i % 2 === 0) checkPage(5);
           const x = i % 2 === 0 ? ml : ml + colW + 2;
-          if (i % 2 === 0 && i > 0) {} // y already incremented
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(9);
-          doc.setTextColor(0);
-          const label = row[0] + ': ';
-          const lw = doc.getTextWidth(label);
+          doc.setFont('helvetica','bold'); doc.setFontSize(9); doc.setTextColor(0);
+          const label = row[0] + ': '; const lw = doc.getTextWidth(label);
           doc.text(label, x, y);
-          doc.setFont('helvetica', 'normal');
-          doc.setTextColor(50);
-          doc.text(row[1], x + lw, y);
+          doc.setFont('helvetica','normal'); doc.setTextColor(50); doc.text(row[1], x + lw, y);
           if (i % 2 === 1) y += 5;
         });
         if (skills.length % 2 !== 0) y += 5;
 
-        // ── EXPERIENCE ──
         sectionTitle('Professional Experience');
+        doc.setFont('helvetica','bold'); doc.setFontSize(10); doc.setTextColor(0); doc.text('Capgemini', ml, y);
+        doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(80);
+        const period = '2022 – Present  |  Kolkata, India'; doc.text(period, pw - mr - doc.getTextWidth(period), y); y += 5;
+        doc.setFont('helvetica','italic'); doc.setFontSize(9.5); doc.setTextColor(50); doc.text('Linux Administrator', ml, y); y += 5;
+        ['Configured, administered, and optimised RHEL 7/8 servers supporting enterprise-grade applications in production environments.',
+         'Automated routine operational tasks and system maintenance using Bash/Shell scripting, reducing manual workload and human error significantly.',
+         'Managed monthly patch deployment cycles, compliance reporting, and system updates through Red Hat Satellite Server.',
+         'Performed in-place OS upgrades using the LEAPP utility to migrate RHEL 8 servers to RHEL 9 with zero data loss.',
+         'Upgraded Red Hat Satellite Server and Capsule from v6.15 to 6.16 and subsequently to 6.17, maintaining production stability throughout.',
+         'Developed SLA reports, inventory trackers, and operational dashboards using advanced Excel (Pivot Tables, VLOOKUP, Macros).',
+         'Resolved incidents, performed root cause analysis (RCA), and implemented preventive measures with cross-functional teams.',
+         'Authored and maintained technical documentation including SOPs, troubleshooting guides, and incident resolution workflows.',
+        ].forEach(b => bullet(b));
 
-        // Company / period row
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(10);
-        doc.setTextColor(0);
-        doc.text('Capgemini', ml, y);
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(9);
-        doc.setTextColor(80);
-        const period = '2022 – Present  |  Kolkata, India';
-        doc.text(period, pw - mr - doc.getTextWidth(period), y);
-        y += 5;
-
-        doc.setFont('helvetica', 'italic');
-        doc.setFontSize(9.5);
-        doc.setTextColor(50);
-        doc.text('Linux Administrator', ml, y);
-        y += 5;
-
-        const expBullets = [
-          'Configured, administered, and optimised RHEL 7/8 servers supporting enterprise-grade applications in production environments.',
-          'Automated routine operational tasks and system maintenance using Bash/Shell scripting, reducing manual workload and human error significantly.',
-          'Managed monthly patch deployment cycles, compliance reporting, and system updates through Red Hat Satellite Server.',
-          'Performed in-place OS upgrades using the LEAPP utility to migrate RHEL 8 servers to RHEL 9 with zero data loss.',
-          'Upgraded Red Hat Satellite Server and Capsule from v6.15 to 6.16 and subsequently to 6.17, maintaining production stability throughout.',
-          'Developed SLA reports, inventory trackers, and operational dashboards using advanced Excel (Pivot Tables, VLOOKUP, Macros).',
-          'Resolved incidents, performed root cause analysis (RCA), and implemented preventive measures with cross-functional teams.',
-          'Authored and maintained technical documentation including SOPs, troubleshooting guides, and incident resolution workflows.',
-        ];
-        expBullets.forEach(b => bullet(b));
-
-        // ── AUTOMATIONS ──
         sectionTitle('Key Automation Projects');
-
-        const autos = [
-          ['Post-Install Hardening Automation',
-           'Automated post-installation system hardening, required package installation, and Red Hat Satellite Server registration — eliminating manual setup and ensuring compliance from first boot.'],
-          ['Patch Compliance Reporter',
-           'Bash script that scans all registered servers, checks patch compliance status, and delivers a formatted compliance report via email — replacing a fully manual audit process.'],
-          ['Health Check Script — Linux & Solaris',
-           'Automated health scan across Linux and Solaris servers. Collects CPU, memory, disk, and service metrics; emails a consolidated health report to stakeholders on a scheduled basis.'],
-          ['Centralised Patching Framework',
-           'Script enabling patch deployment to multiple remote servers from a single central host — providing consistent, auditable mass-patching without manual SSH to each node.'],
-          ['Filesystem Utilisation Alerting',
-           'Real-time filesystem monitoring with automated email alerts on threshold breaches — enabling proactive intervention before storage-related outages occur.'],
-          ['Automated Agentless Opsview Monitoring for Solaris Servers',
-          'Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script, improving scalability and reducing operational overhead. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors to enable seamless communication with target Solaris systems. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies. This automation streamlined monitoring setup, eliminated manual intervention, and enhanced visibility across the infrastructure.'],
-          ['Proactive Squid Service Monitoring & Alerting Using Bash',
-          'Resolved recurring business outages caused by unmonitored Squid proxy service failures by developing a proactive monitoring solution. Built a lightweight Bash script to continuously check the status of Squid services across all proxy servers. Integrated automated email alerts to notify admins instantly if any squid service is found not running. Scheduled the script using cron to execute every 10 minutes, ensuring near real-time detection and faster incident response. This solution significantly reduced downtime, improved service reliability, and strengthened overall monitoring capabilities.'],
-          ];
-        autos.forEach(([title, desc]) => {
+        [
+          ['Post-Install Hardening Automation','Automated post-installation system hardening, required package installation, and Red Hat Satellite Server registration — eliminating manual setup and ensuring compliance from first boot.'],
+          ['Patch Compliance Reporter','Bash script that scans all registered servers, checks patch compliance status, and delivers a formatted compliance report via email — replacing a fully manual audit process.'],
+          ['Health Check Script — Linux & Solaris','Automated health scan across Linux and Solaris servers. Collects CPU, memory, disk, and service metrics; emails a consolidated health report to stakeholders on a scheduled basis.'],
+          ['Centralised Patching Framework','Script enabling patch deployment to multiple remote servers from a single central host — providing consistent, auditable mass-patching without manual SSH to each node.'],
+          ['Filesystem Utilisation Alerting','Real-time filesystem monitoring with automated email alerts on threshold breaches — enabling proactive intervention before storage-related outages occur.'],
+          ['Automated Agentless Opsview Monitoring for Solaris Servers','Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies.'],
+          ['Proactive Squid Service Monitoring & Alerting Using Bash','Built a lightweight Bash script to continuously check Squid services across all proxy servers with automated email alerts and cron-based execution every 10 minutes, significantly reducing downtime and improving service reliability.'],
+        ].forEach(([title, desc]) => {
           checkPage(12);
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(9.5);
-          doc.setTextColor(0);
-          doc.text(title, ml, y);
-          y += 4.5;
-          bodyText(desc, { leading: 4.8, color: 50 });
-          y += 1;
+          doc.setFont('helvetica','bold'); doc.setFontSize(9.5); doc.setTextColor(0); doc.text(title, ml, y); y += 4.5;
+          bodyText(desc, { leading: 4.8, color: 50 }); y += 1;
         });
 
-        // ── PERSONAL PROJECTS ──
         sectionTitle('Personal Projects');
-
-        const projects = [
+        [
           ['Azure Server Health Monitoring System',
-           'Ansible | Django | NGINX | Azure | Linux',
-           'Agentless server health monitoring for Azure VMs using Ansible. Collects CPU, memory, and disk metrics without agent installation. Dashboard built with Django, served via NGINX reverse proxy.',
-           'github.com/aritramondal-1711/HealthCheck'],
+          'Ansible | Django | NGINX | Azure | Linux',
+          'Agentless server health monitoring for Azure VMs using Ansible. Dashboard built with Django, served via NGINX reverse proxy.',
+          'github.com/aritramondal-1711/HealthCheck'],
           ['Automated Health Monitor Setup',
-           'Ansible | systemd | NGINX | Linux',
-           'One-command Ansible automation to deploy and configure the complete Health Monitoring stack. Handles Django service setup, systemd scheduling, NGINX config, permissions, daemon reloads — fully idempotent.',
-           'github.com/aritramondal-1711/HelthMonitor_SetUp'],
+          'Ansible | systemd | NGINX | Linux',
+          'One-command Ansible automation to deploy and configure the complete Health Monitoring stack. Fully idempotent.',
+          'github.com/aritramondal-1711/HelthMonitor_SetUp'],
           ['Enterprise Hub-and-Spoke Azure Network Project',
-           'Microsoft Azure | VNet | Azure Firewall | NSG | VNet Peering | UDR | Azure Bastion | Load Balancer',
-           'Architected a secure Azure hub-and-spoke network with centralized firewall-based egress control and no public IP exposure. Implemented VNet peering, UDR routing, and NSGs for strict tier isolation, enabled Bastion-only access, and deployed internal load balancing with Private DNS-delivering a scalable, Zero Trust-aligned cloud architecture.',
-           'github.com/aritramondal-1711/Azure-Network-Project'
-          ],
+          'Microsoft Azure | VNet | Azure Firewall | NSG | Azure Bastion | Load Balancer',
+          'Architected a secure Azure hub-and-spoke network with centralized firewall-based egress control, VNet peering, UDR routing, NSGs, Bastion-only access, and Private DNS — Zero Trust–aligned.',
+          'github.com/aritramondal-1711/Azure-Network-Project'],
           ['Automated OS Patching Framework using Ansible',
-           'Ansible | Azure | Linux | SSH | Ptching | Automation',
-          'Developed an enterprise-grade OS patching automation framework using Ansible to automate pre-check validation, patch deployment, and post-check verification across Linux and Solaris servers. Implemented modular Ansible roles, agentless SSH-based execution, centralized logging, and automated report generation to improve patch consistency, reduce manual effort, minimize downtime, and enhance infrastructure reliability and compliance.', 
-           'github.com/aritramondal-1711/Ansible_Playbook_Precheck_Patch_Postcheck'
-          ]
-        ];
-        projects.forEach(([title, stack, desc, link]) => {
+          'Ansible | Linux | Patch Management | Automation',
+          'Enterprise-grade OS patching automation with modular Ansible roles, agentless SSH-based execution, centralized logging, and automated report generation across Linux and Solaris servers.',
+          'github.com/aritramondal-1711/Ansible_Playbook_Precheck_Patch_Postcheck'],
+        ].forEach(([title, stack, desc, link]) => {
           checkPage(18);
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(9.5);
-          doc.setTextColor(0);
-          doc.text(title, ml, y);
-          y += 4.5;
-          doc.setFont('helvetica', 'italic');
-          doc.setFontSize(8.5);
-          doc.setTextColor(80);
-          doc.text(stack, ml, y);
-          y += 4.5;
+          doc.setFont('helvetica','bold'); doc.setFontSize(9.5); doc.setTextColor(0); doc.text(title, ml, y); y += 4.5;
+          doc.setFont('helvetica','italic'); doc.setFontSize(8.5); doc.setTextColor(80); doc.text(stack, ml, y); y += 4.5;
           bodyText(desc, { leading: 4.8, color: 50 });
-          doc.setFont('helvetica', 'normal');
-          doc.setFontSize(8.5);
-          doc.setTextColor(26, 13, 171);
-          doc.text(link, ml, y);
-          y += 6;
+          doc.setFont('helvetica','normal'); doc.setFontSize(8.5); doc.setTextColor(26, 13, 171); doc.text(link, ml, y); y += 6;
         });
 
-        // ── CERTIFICATIONS ──
         sectionTitle('Certifications');
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(9.5);
-        doc.setTextColor(0);
-        doc.text('Microsoft Certified: Azure Fundamentals (AZ-900)', ml, y);
-        y += 5;
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(9);
-        doc.setTextColor(60);
-        doc.text('Issued by Microsoft · Cloud concepts, Azure services, pricing, SLAs, and governance.', ml, y);
-        y += 5;
+        doc.setFont('helvetica','bold'); doc.setFontSize(9.5); doc.setTextColor(0); doc.text('Microsoft Certified: Azure Fundamentals (AZ-900)', ml, y); y += 5;
+        doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(60); doc.text('Issued by Microsoft · Cloud concepts, Azure services, pricing, SLAs, and governance.', ml, y); y += 5;
 
-        // ── EDUCATION ──
         sectionTitle('Education');
-
-        const edu = [
-          ['Master of Computer Applications (MCA)', 'Jadavpur University, Kolkata, West Bengal, India', '2019 – 2022'],
-          ['Bachelor of Science (B.Sc.) in Mathematics', 'Santipur College, Nadia, West Bengal (University of Kalyani)', '2015 – 2019'],
-        ];
-        edu.forEach(([degree, school, years]) => {
+        [['Master of Computer Applications (MCA)','Jadavpur University, Kolkata, West Bengal, India','2019 – 2022'],
+         ['Bachelor of Science (B.Sc.) in Mathematics','Santipur College, Nadia, West Bengal (University of Kalyani)','2015 – 2019'],
+        ].forEach(([degree, school, years]) => {
           checkPage(10);
-          doc.setFont('helvetica', 'bold');
-          doc.setFontSize(9.5);
-          doc.setTextColor(0);
-          doc.text(degree, ml, y);
-          doc.setFont('helvetica', 'normal');
-          doc.setFontSize(9);
-          doc.setTextColor(80);
-          doc.text(years, pw - mr - doc.getTextWidth(years), y);
-          y += 5;
-          doc.setFont('helvetica', 'normal');
-          doc.setFontSize(9);
-          doc.setTextColor(60);
-          doc.text(school, ml, y);
-          y += 6;
+          doc.setFont('helvetica','bold'); doc.setFontSize(9.5); doc.setTextColor(0); doc.text(degree, ml, y);
+          doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(80); doc.text(years, pw - mr - doc.getTextWidth(years), y); y += 5;
+          doc.setFont('helvetica','normal'); doc.setFontSize(9); doc.setTextColor(60); doc.text(school, ml, y); y += 6;
         });
 
         doc.save('Aritra_Mondal_Linux_Administrator_Resume.pdf');
-        btn.disabled = false;
-        btn.textContent = '✓ Downloaded';
+        btn.disabled = false; btn.textContent = '✓ Downloaded';
         setTimeout(() => { btn.textContent = '↓ Download Resume'; }, 3000);
-
       } catch (err) {
-        console.error(err);
-        btn.disabled = false;
-        btn.textContent = '↓ Download Resume';
+        console.error(err); btn.disabled = false; btn.textContent = '↓ Download Resume';
         alert('PDF generation failed. Please try again.');
       }
     }
-
   </script>
 
   <script>
-    // Cursor
     const cursor = document.getElementById('cursor');
     document.addEventListener('mousemove', e => {
       cursor.style.left = e.clientX - 4 + 'px';
@@ -1742,7 +1269,6 @@
       el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
     });
 
-    // Intersection observer for scroll reveals
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
