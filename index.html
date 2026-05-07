@@ -1624,9 +1624,7 @@
           'Designed and implemented an agentless Opsview monitoring solution for 100+ Solaris servers using bash script, improving scalability and reducing operational overhead. Configured secure passwordless SSH authentication for the Opsview user across 12 distributed collectors to enable seamless communication with target Solaris systems. Deployed and configured custom monitoring scripts on each server, ensuring correct permissions and execution policies. This automation streamlined monitoring setup, eliminated manual intervention, and enhanced visibility across the infrastructure.'],
           ['Proactive Squid Service Monitoring & Alerting Using Bash',
           'Resolved recurring business outages caused by unmonitored Squid proxy service failures by developing a proactive monitoring solution. Built a lightweight Bash script to continuously check the status of Squid services across all proxy servers. Integrated automated email alerts to notify admins instantly if any squid service is found not running. Scheduled the script using cron to execute every 10 minutes, ensuring near real-time detection and faster incident response. This solution significantly reduced downtime, improved service reliability, and strengthened overall monitoring capabilities.'],
-          ['Automated OS Patching Framework using Ansible'],
-          ['Developed an enterprise-grade OS patching automation framework using Ansible to automate pre-check validation, patch deployment, and post-check verification across Linux and Solaris servers. Implemented modular Ansible roles, agentless SSH-based execution, centralized logging, and automated report generation to improve patch consistency, reduce manual effort, minimize downtime, and enhance infrastructure reliability and compliance. GitHub: github.com/aritramondal-1711/Ansible_Playbook_Precheck_Patch_Postcheck']
-        ];
+          ];
         autos.forEach(([title, desc]) => {
           checkPage(12);
           doc.setFont('helvetica', 'bold');
@@ -1654,6 +1652,9 @@
            'Microsoft Azure | VNet | Azure Firewall | NSG | VNet Peering | UDR | Azure Bastion | Load Balancer',
            'Architected a secure Azure hub-and-spoke network with centralized firewall-based egress control and no public IP exposure. Implemented VNet peering, UDR routing, and NSGs for strict tier isolation, enabled Bastion-only access, and deployed internal load balancing with Private DNS-delivering a scalable, Zero Trust-aligned cloud architecture.',
            'github.com/aritramondal-1711/Azure-Network-Project'
+          ],
+          ['Automated OS Patching Framework using Ansible'],
+          ['Developed an enterprise-grade OS patching automation framework using Ansible to automate pre-check validation, patch deployment, and post-check verification across Linux and Solaris servers. Implemented modular Ansible roles, agentless SSH-based execution, centralized logging, and automated report generation to improve patch consistency, reduce manual effort, minimize downtime, and enhance infrastructure reliability and compliance. GitHub: github.com/aritramondal-1711/Ansible_Playbook_Precheck_Patch_Postcheck'
           ]
         ];
         projects.forEach(([title, stack, desc, link]) => {
