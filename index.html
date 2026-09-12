@@ -102,7 +102,7 @@
     }
 
     nav {
-      position: fixed;
+      position: sticky;
       top: 0; left: 0; right: 0;
       z-index: 100;
       display: flex;
@@ -787,12 +787,33 @@
       justify-content: space-between;
       flex-wrap: wrap;
     }
-    #badges{
-      height: fit-content;
+    #badge_collection{
       width: 60vw;
+      height: fit-content;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
+      overflow: auto;
+    }
+    .badges{
+      height: 200px;
+      width: 100%;
+      display: flex;
+    }
+    .azure{
+      height: 120px;
+      width: 120px;
+      padding: 5px;
+    }
+    .rhel{
+      width: 125px;
+      height: 120px;
+      padding: 5px;
+    }
+    #rhcsa{
+      height: 130px;
+      width: 130px;
+      position: relative;
+      top: -15px;
     }
     .crt-url{
       text-decoration: none;
@@ -831,7 +852,7 @@
           class="hero-photo"
           loading="eager"
         />
-        <div class="hero-status">Linux & Cloud Admin</div>
+        <div class="hero-status">Linux Admin</div>
       </div>
 
       <!-- TEXT -->
@@ -842,18 +863,22 @@
           <span class="line2">Mondal</span>
         </h1>
         <p class="hero-desc">
-          Results-driven Linux Administrator with 4 years of experience at Capgemini, specializing in Red Hat Enterprise Linux (RHEL 7/8/9) System Administration, Ansible Automation, Bash Scripting, Shell Scripting, and Red Hat Satellite Server. With hands on practice on Azure Cloud Platform.
+          Red Hat certified Linux Administrator with 4 years of experience, specializing in Red Hat Enterprise Linux (RHEL 7/8/9) System Administration, Ansible Automation, Bash Scripting, Shell Scripting, and Red Hat Satellite Server. With hands on practice on Azure Cloud Platform.
         </p>
         <div class="crt_ov">
           <b class="crt_azure">Azure Certified (AZ-900, AZ-104)</b> 
           <b class="crt_redhat">Red Hat Certifed (RHCSA, RHCE, RHCASA)</b>
         </div><br>
-        <div id="badges">
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/MondalAritra-4418/7B5B4951AFEEEB08?sharingId=4F3CCF40D4549397" target="_blank"><img src="az900.svg" alt="az900" id="az900" style="height: 150px; width: 150px"></a>
-          <a href="https://learn.microsoft.com/api/credentials/share/en-us/MondalAritra-4418/C56013D59DC5720D?sharingId=4F3CCF40D4549397" target="_blank"><img src="az104.svg" alt="AZ104" id="az104" style="height: 150px; width: 150px"></a>
-          <a href="https://www.credly.com/badges/750db774-928e-4248-a8a3-905693042493" target="_blank"><img src="rhcsa.png" alt="rhcsa" id="rhcsa" style="height: 150px; width: 150px"></a>
-          <a href="https://www.credly.com/badges/09fe130b-f04e-4985-941b-c337ecf4e7b3/public_url" target="_blank"><img src="rhce.png" alt="rhce" id="rhce" style="height: 120px; width: 150px"></a>
-          <a href="https://www.credly.com/badges/4b83a4a3-c7a7-4ca0-bf6b-a11fe14b8dc9/public_url" target="_blank"><img src="rhcasa.png" alt="rhcasa" id="rhcasa" style="height: 120px; width: 150px"></a>
+        <div id="badge_collection">
+          <div class="badges">
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/MondalAritra-4418/7B5B4951AFEEEB08?sharingId=4F3CCF40D4549397" target="_blank"><img src="az900.svg" alt="az900" id="az900" class="azure"></a>
+            <a href="https://learn.microsoft.com/api/credentials/share/en-us/MondalAritra-4418/C56013D59DC5720D?sharingId=4F3CCF40D4549397" target="_blank"><img src="az104.svg" alt="AZ104" id="az104" class="azure"></a>
+          </div>
+          <div class="badges">
+            <a href="https://www.credly.com/badges/750db774-928e-4248-a8a3-905693042493" target="_blank"><img src="rhcsa.png" alt="rhcsa" id="rhcsa" class="rhel"></a>
+            <a href="https://www.credly.com/badges/09fe130b-f04e-4985-941b-c337ecf4e7b3/public_url" target="_blank"><img src="rhce.png" alt="rhce" id="rhce" class="rhel"></a>
+            <a href="https://www.credly.com/badges/4b83a4a3-c7a7-4ca0-bf6b-a11fe14b8dc9/public_url" target="_blank"><img src="rhcasa.png" alt="rhcasa" id="rhcasa" class="rhel"></a>
+          </div>
         </div><br>
         <div class="hero-tags">
           <span class="tag">RHEL 7/8</span>
