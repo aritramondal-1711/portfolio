@@ -901,7 +901,7 @@
           <a href="https://github.com/aritramondal-1711" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
           <a href="https://www.linkedin.com/in/mondalaritra" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
         </div>
-      </div>
+      </div><br>
 
     </div>
   </section>
@@ -1098,7 +1098,17 @@
         <p>Automated Azure Blob Storage container mounting on RHEL servers using Ansible, BlobFuse2, Jinja2 templates, and systemd services to enable persistent, scalable, and production-ready cloud storage integration with minimal manual intervention.</p>
         <a href="https://github.com/aritramondal-1711/azure-storage-mount-automation" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
       </div>
-      
+      <div class="project-card">
+        <div class="project-number">07</div>
+        <div class="project-stack">
+          <span class="stack-tag">Ansible</span><span class="stack-tag">Dabian</span>
+          <span class="stack-tag">Ubuntu</span><span class="stack-tag">Linux Automation</span>
+          <span class="stack-tag">Jinja2</span><span class="stack-tag">Mail</span>
+        </div>
+        <h3>Automated Patch Compliance Reporting with Ansible</h3>
+        <p>Developed an agentless automation framework using Ansible to generate patch compliance reports across multiple nodes. Configured passwordless SSH and sudo privileges for secure communication, implemented centralized reporting via controller node, and automated compliance calculation with percentage metrics. Reports are delivered via email with structured HTML tables and attachments, while mail relay credentials are securely managed using Ansible Vault.</p>
+        <a href="https://github.com/aritramondal-1711/patch_compliance_report_ansible.git" target="_blank" rel="noopener" class="project-link">View on GitHub →</a>
+      </div>
     </div>
   </section>
 
@@ -1137,7 +1147,7 @@
       <div class="cert-badge"><img class="cert-img" src="rhce.png" alt="RHCE"></div> 
       <div class="cert-info">
         <h3>Red Hat Certified Engineer in Ansible (RHCE)</h3>
-        <p>Issued by Red Hat : <a href="https://www.credly.com/badges/09fe130b-f04e-4985-941b-c337ecf4e7b3/public_url" target="_blank" class="crt-url"> RHCE (EX-294) Certificate </a></p>
+        <p>Issued by Red Hat : <a href="https://www.credly.com/badges/09fe130b-f04e-4985-941b-c337ecf4e7b3/public_url" target="_blank" class="crt-url"> RHCASA (EX-294) Certificate </a></p>
       </div>
     </div>
     <div class="cert-card">
@@ -1258,6 +1268,8 @@
     <p>Developed an agentless Linux Inventory & Patch Management Web Console using Python Django and Ansible to automate server administration tasks. Implemented centralized server inventory management, remote patch deployment, SSH-based system validation, automated pre/post patch health checks, and patch execution logging through a responsive WebUI. Integrated NGINX reverse proxy for deployment and optimized backend automation workflows for efficient Linux infrastructure management.</p>
     <p class="ats-project-header">Azure Storage Mount Automation using Ansible & BlobFuse2</p>
     <p>Automated Azure Blob Storage container mounting on RHEL servers using Ansible, BlobFuse2, Jinja2 templates, and systemd services to enable persistent, scalable, and production-ready cloud storage integration with minimal manual intervention.</p>
+    <p class="ats-project-header">Automated Patch Compliance Reporting with Ansible</p>
+    <p>Developed an agentless automation framework using Ansible to generate patch compliance reports across multiple nodes. Configured passwordless SSH and sudo privileges for secure communication, implemented centralized reporting via controller node, and automated compliance calculation with percentage metrics. Reports are delivered via email with structured HTML tables and attachments, while mail relay credentials are securely managed using Ansible Vault.</p>
     
     
     <h2>Certifications</h2>
@@ -1392,7 +1404,11 @@
           ['Azure Storage Mount Automation using Ansible & BlobFuse2',
           'Ansible | Linux Administration | RHEL | Azure Cloud | Azure Blob Storage | BlobFuse2 | systemd | Jinja2',
            'Automated Azure Blob Storage container mounting on RHEL servers using Ansible, BlobFuse2, Jinja2 templates, and systemd services to enable persistent, scalable, and production-ready cloud storage integration with minimal manual intervention.',
-          'https://github.com/aritramondal-1711/azure-storage-mount-automation']
+          'https://github.com/aritramondal-1711/azure-storage-mount-automation'],
+          ['Automated Patch Compliance Reporting with Ansible',
+          'Ansible | Dabian | Ubuntu | Linux Automation | Patch Management',
+          'Developed an agentless automation framework using Ansible to generate patch compliance reports across multiple nodes. Configured passwordless SSH and sudo privileges for secure communication, implemented centralized reporting via controller node, and automated compliance calculation with percentage metrics. Reports are delivered via email with structured HTML tables and attachments, while mail relay credentials are securely managed using Ansible Vault.',
+          'https://github.com/aritramondal-1711/patch_compliance_report_ansible.git']
         ].forEach(([title, stack, desc, link]) => {
           checkPage(18);
           doc.setFont('helvetica','bold'); doc.setFontSize(9.5); doc.setTextColor(0); doc.text(title, ml, y); y += 4.5;
